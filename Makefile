@@ -14,7 +14,7 @@ build: qemu-aarch64-static
 		cat Dockerfile.builder > Dockerfile; \
 		cat docker/$(arch)/Dockerfile.template >> Dockerfile; \
 		cat Dockerfile.common >> Dockerfile; \
-		docker build -t jaymoulin/plex:${VERSION}-$(arch) --build-arg PMS_URL=${PMS_URL} --build-arg ARCH=$(arch) --build-arg VERSION=${VERSION}-$(arch) ${CACHE} .;\
+		docker build -t jakerote1995/plex:${VERSION}-$(arch) --build-arg PMS_URL=${PMS_URL} --build-arg ARCH=$(arch) --build-arg VERSION=${VERSION}-$(arch) ${CACHE} .;\
 		docker run --rm --privileged multiarch/qemu-user-static:register --reset; \
 	)
 publish:
